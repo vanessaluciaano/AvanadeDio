@@ -1,0 +1,29 @@
+using System; 
+
+class minhaClasse {
+
+    static void Main(string[] args) { 
+
+    double SomaNotas = 0;
+    int Notas = 0;
+    
+    do 
+    {
+      double EntradaNotas = double.Parse(Console.ReadLine());
+      if (EntradaNotas < 0 || EntradaNotas > 10)
+      {
+        Console.WriteLine("nota invalida");
+      }
+      else
+      {
+        Notas++;
+        SomaNotas += EntradaNotas;
+      }
+    }
+    while (Notas < 2);
+    
+    Console.WriteLine("media = " + (SomaNotas / 2).ToString("N2"));
+
+    }
+
+}

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>CatalogoRacaoAPI</name>
+	</assembly>
+	<members>
+		<member name="M:CatalogoRacaoAPI.Controllers.V1.RacoesController.Obter(System.Int32,System.Int32)">
+			<summary>
+				Buscar todos as rações de forma paginada
+			</summary>
+			<remarks>
+				Não é possível retornar as rações sem paginação
+			</remarks>
+			<param name="pagina">Indica qual página está sendo consultada. Mínimo 1</param>
+			<param name="quantidade">Indica a quantidade de reistros por página. Mínimo 1 e máximo 50</param>
+			<response code="200">Retorna a lista de rações</response>
+			<response code="204">Caso não haja rações</response>
+		</member>
+		<member name="M:CatalogoRacaoAPI.Controllers.V1.RacoesController.Obter(System.Guid)">
+			<summary>
+				Buscar uma ração pelo seu Id
+			</summary>
+			<param name="idRacao">Id da ração buscado</param>
+			<response code="200">Retorna a ração filtrada</response>
+			<response code="204">Caso não haja ração com este id</response>
+		</member>
+		<member name="M:CatalogoRacaoAPI.Controllers.V1.RacoesController.InserirRacao(CatalagoRacaoAPI.InputModel.RacaoInputModel)">
+			<summary>
+				Inserir uma ração no catálogo
+			</summary>
+			<param name="racaoInputModel">Dados a ser inserido</param>
+			<response code="200">Caso seja inserido com sucesso</response>
+			<response code="422">Caso já exista uma com mesmo nome para a mesma marca</response>
+		</member>
+		<member name="M:CatalogoRacaoAPI.Controllers.V1.RacoesController.AtualizarRacao(System.Guid,CatalogoRacaoAPI.InputModel.RacaoInputModel)">
+			<summary>
+				Atualizar uma ração no catálogo
+			</summary>
+			/// <param name="idRacao">Id da ração a ser atualizada</param>
+			<param name="racaoInputModel">Novos dados para atualizar a ração indicada</param>
+			<response code="200">Caso seja atualizado com sucesso</response>
+			<response code="404">Caso não exista uma com este Id</response>
+		</member>
+		<member name="M:CatalogoRacaoAPI.Controllers.V1.RacoesController.AtualizarRacao(System.Guid,System.Double)">
+			<summary>
+				Atualizar o preço de uma ração
+			</summary>
+			/// <param name="idRacao">Id da ração a ser atualizada</param>
+			<param name="preco">Novo preço da ração</param>
+			<response code="200">Caso o preço seja atualizado com sucesso</response>
+			<response code="404">Caso não exista uma com este Id</response>
+		</member>
+		<member name="M:CatalogoRacaoAPI.Controllers.V1.RacoesController.ApagarRacao(System.Guid)">
+			<summary>
+				Excluir uma ração
+			</summary>
+			/// <param name="idRacao">Id da ração a ser excluída</param>
+			<response code="200">Caso o preço seja atualizado com sucesso</response>
+			<response code="404">Caso não exista com este Id</response>
+		</member>
+	</members>
+</doc>
